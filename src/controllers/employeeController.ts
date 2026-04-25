@@ -1,4 +1,5 @@
-import { type Request, type Response, type NextFunction } from 'express';import { employeeService } from '../services/employeeService';
+import { type Request, type Response, type NextFunction } from 'express';
+import { employeeService } from '../services/employeeService.js';
 
 export const getEmployees = async (req: Request, res: Response, next: NextFunction) => {
     try {
