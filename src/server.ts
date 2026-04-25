@@ -8,7 +8,7 @@ console.log("Starting server process..."); // שורת בדיקה
 
 
 
-const PORT = Number(process.env.PORT) || 8080;
+const PORT = process.env.PORT || 8080;
 const MONGODB_URI = process.env.MONGODB_URI
 
 const startServer = async () => {
@@ -17,7 +17,7 @@ const startServer = async () => {
         await mongoose.connect(MONGODB_URI as string);
         console.log('✅ Connected to MongoDB');
 
-        app.listen(PORT, "0.0.0.0", () => {
+        app.listen(Number(PORT), "0.0.0.0", () => {
             console.log(`🚀 Server is running on port ${PORT}`);
         });
 
