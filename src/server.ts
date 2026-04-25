@@ -8,7 +8,7 @@ console.log("Starting server process..."); // שורת בדיקה
 
 
 
-const PORT = Number(process.env.PORT) || 3002;
+const PORT = Number(process.env.PORT) || 8080;
 const MONGODB_URI = process.env.MONGODB_URI
 
 const startServer = async () => {
