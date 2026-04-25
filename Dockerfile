@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # 7. חשיפת הפורט (במקרה שלך 3002 כפי שראינו בטרמינל)
-EXPOSE 3002
+EXPOSE 8080
 
 # 8. פקודת ההרצה
 CMD ["node", "dist/server.js"]
