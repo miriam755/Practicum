@@ -1,23 +1,22 @@
-# 1. בחירת תמונת הבסיס של Node
 FROM node:18-alpine
 
-# 2. יצירת תיקיית עבודה בתוך הקונטיינר
 WORKDIR /app
 
-# 3. העתקת קובצי ה-Dependencies
+# העתקת קבצי ההגדרות
 COPY package*.json ./
+COPY tsconfig.json ./
 
-# 4. התקנת הספריות
+# התקנה (כולל הספריות שצריך ל-build)
 RUN npm install
 
-# 5. העתקת שאר קובצי הפרויקט (כולל תיקיית src)
+# העתקת הקוד
 COPY . .
 
-# 6. קימפול ה-TypeScript ל-JavaScript
+# בנייה של הפרויקט
 RUN npm run build
 
-# 7. חשיפת הפורט (במקרה שלך 3002 כפי שראינו בטרמינל)
+# חשיפת הפורט שגוגל מצפה לו
 EXPOSE 8080
 
-# 8. פקודת ההרצה
-CMD ["node", "dist/server.js"]
+# הרצה
+CMD ["npm", "start"]
