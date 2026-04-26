@@ -10,10 +10,10 @@ export interface IEmployee extends Document {
 
 const employeeSchema = new Schema<IEmployee>({
     name: { type: String, required: true },
-    phone: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    role: { type: String, required: true },
-    experience: { type: Number, required: true }
+    phone: { type: String },
+    email: { type: String,  unique: true },
+    role: { type: String },
+    experience: { type: Number}
 });
 // הפרמטר השלישי הוא השם המדויק של ה-Collection במונגו
 export const Employee = model<IEmployee>('Employee', employeeSchema, 'Miriam Reichenberg');
